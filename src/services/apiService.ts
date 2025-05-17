@@ -58,17 +58,14 @@ const diseaseClasses: { [key: number]: { name: string; description: string } } =
 };
 
 
-/**
- * Send image and text data to the backend for diagnosis
- */
+
 export const getDiagnosis = async (imageFiles: File[], text: string): Promise<{ results: DiagnosisResult[] }> => {
   try {
     const formData = new FormData();
     formData.append("text", text);
 
-    // Append all images
     imageFiles.forEach((file) => {
-      formData.append("images", file); // key should match Flask backend: request.files.getlist("images")
+      formData.append("images", file);
     });
 
     const response = await fetch(`${API_URL}/predict`, {
