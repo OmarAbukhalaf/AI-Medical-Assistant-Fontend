@@ -1,15 +1,11 @@
 
 import type { DiagnosisResult, ApiResponse } from "../lib/types";
 
-/**
- * API Service for connecting to the backend
- * Configure your API endpoint URL here
- */
 
-// Replace this URL with your actual backend API endpoint
+
+
 const API_URL = "https://ai-medical-assistant-backend-i9li.onrender.com";
 
-// Map of disease classes to their names and descriptions
 const diseaseClasses: { [key: number]: { name: string; description: string } } = {
   0: {
     name: "Congenital & Genetic",
