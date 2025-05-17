@@ -24,14 +24,11 @@ if (imageFiles.length === 0 && !medicalText.trim()) {
       return;
     }
 
-    // Start loading state
     setIsLoading(true);
     
     try {
-      // Call the API service to get diagnosis
         const diagnosisData = await getDiagnosis(imageFiles, medicalText);
       
-      // Set the results from the API response
       setResults(diagnosisData.results);
       
       toast({
